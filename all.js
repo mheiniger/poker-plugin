@@ -8,12 +8,14 @@ var calculate = function () {
     var results = {};
 
     cards.each(function() {
-        var suggestion = {};
         var index = $j(this).text();
+        var suggestion;
 
         if (!results[index]) {
+            suggestion = {};
             suggestion.votes = 1;
         } else {
+            suggestion = results[index];
             suggestion.votes++;
         }
 
