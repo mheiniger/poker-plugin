@@ -10,7 +10,6 @@ PokerPlugin = {
     injectButton: function() {
         var a = $j('<a/>', {
             text: 'Calculate Results',
-//            onclick: 'calculate();',
             style: 'cursor: pointer',
             id: 'injected-button'
         });
