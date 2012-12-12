@@ -3,7 +3,8 @@
 
 var $j = jQuery.noConflict();
 var calculate = function () {
-    var cards = $j('.story.open .draw .estimate span');
+    var div = $j('.story.open div.draw_container').last();
+    var cards = $j('.estimate span', div);
     var results = {};
 
     cards.each(function() {
@@ -35,8 +36,22 @@ var calculate = function () {
             suggestion.votes + ' votes, ' +
             suggestion.percentage + '%';
 
+        var style = 'color: ';
+        var color;
+        var percent = suggestion.percentage;
+        if (percent < 40) {
+            color = 'grey';
+        } else if(percent >= 40 && percent < 60) {
+            color = 'green';
+        } else {
+            color = 'red';
+        }
+
+        style += color + ';';
+
         var p = $j('<p/>', {
-            text: str
+            text: str,
+            style: style
         });
 
         div.append(p);
