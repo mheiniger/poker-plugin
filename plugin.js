@@ -14,7 +14,7 @@ PokerPlugin = {
 
         $j('ul.actions').append(li);
 
-        $j('#injected-button').live('click', PokerPlugin.calculate);
+        $j('#injected-button').on('click', PokerPlugin.calculate);
     },
 
     calculate: function() {
